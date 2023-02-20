@@ -38,15 +38,5 @@ deleteButton.addEventListener("click", () => {
 });
 
 equalButton.addEventListener("click", () => {
-  let operators = ["+", "-", "*", "/"];
-  operators.forEach((operator) => {
-    let included = inputElement.value.includes(operator);
-    if (included) {
-      let index = inputElement.value.indexOf(operator);
-      let leftPart = inputElement.value.slice(0, index);
-      let rightPart = inputElement.value.slice(index + 1);
-
-      inputElement.value = (eval(leftPart + operator + rightPart)).toFixed(1)
-    }
-  });
+  inputElement.value = eval(inputElement.value);
 });
